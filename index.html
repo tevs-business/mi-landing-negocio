@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TEVS BUSINESS — Páginas Web que Venden</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+--bg:#06080d;
+--bg2:#0c0f16;
+--bg3:#10141e;
+--accent:#00e5a0;
+--accent2:#00b37a;
+--text:#dde6f0;
+--muted:#6a7a8a;
+--border:rgba(0,229,160,0.15);
+--card:rgba(255,255,255,0.025);
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;font-size:16px;line-height:1.65;overflow-x:hidden}
+h1,h2,h3,.logo{font-family:'Syne',sans-serif}
+a{text-decoration:none}
+em{font-style:normal;color:var(--accent)}
+
+/* ── CURSOR GLOW ── */
+.cursor-glow{position:fixed;pointer-events:none;z-index:9999;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(0,229,160,0.07) 0%,transparent 70%);transform:translate(-50%,-50%);transition:opacity 0.3s;opacity:0}
+body:hover .cursor-glow{opacity:1}
+
+/* ── NAV ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1rem 1.5rem;display:flex;justify-content:space-between;align-items:center;transition:background 0.4s,border-color 0.4s;border-bottom:1px solid transparent}
+nav.scrolled{background:rgba(6,8,13,0.9);backdrop-filter:blur(16px);border-color:rgba(0,229,160,0.1)}
+.logo{font-size:1.2rem;font-weight:800;letter-spacing:0.06em;color:var(--accent)}
+.logo span{color:var(--text)}
+.nav-cta{background:var(--accent);color:#060810;font-family:'Syne',sans-serif;font-weight:700;font-size:0.82rem;padding:0.5rem 1.2rem;border-radius:100px;transition:transform 0.2s,box-shadow 0.2s,background 0.2s}
+.nav-cta:hover{transform:scale(1.05);box-shadow:0 0 24px rgba(0,229,160,0.45)}
+
+/* ── HERO ── */
+.hero{min-height:100svh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:7rem 1.5rem 5rem;position:relative;overflow:hidden}
+/* animated mesh */
+.mesh{position:absolute;inset:0;overflow:hidden;z-index:0}
+.mesh-blob{position:absolute;border-radius:50%;filter:blur(80px);animation:drift 14s ease-in-out infinite alternate}
+.mesh-blob:nth-child(1){width:500px;height:500px;background:rgba(0,229,160,0.09);top:-10%;left:-15%;animation-duration:16s}
+.mesh-blob:nth-child(2){width:400px;height:400px;background:rgba(0,120,200,0.07);top:30%;right:-10%;animation-duration:12s;animation-delay:-5s}
+.mesh-blob:nth-child(3){width:350px;height:350px;background:rgba(120,0,200,0.05);bottom:-5%;left:30%;animation-duration:18s;animation-delay:-8s}
+@keyframes drift{0%{transform:translate(0,0) scale(1)}100%{transform:translate(40px,30px) scale(1.1)}}
+/* grid */
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(0,229,160,0.035) 1px,transparent 1px),linear-gradient(90deg,rgba(0,229,160,0.035) 1px,transparent 1px);background-size:56px 56px;mask-image:radial-gradient(ellipse 90% 75% at 50% 50%,black 30%,transparent)}
+.hero-content{position:relative;z-index:1}
+.badge{display:inline-flex;align-items:center;gap:0.45rem;background:rgba(0,229,160,0.08);border:1px solid rgba(0,229,160,0.25);color:var(--accent);font-size:0.78rem;font-weight:500;padding:0.38rem 1rem;border-radius:100px;margin-bottom:1.8rem;letter-spacing:0.04em}
+.badge-dot{width:6px;height:6px;border-radius:50%;background:var(--accent);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.3;transform:scale(0.7)}}
+h1{font-size:clamp(2.5rem,9vw,4.6rem);font-weight:800;line-height:1.08;letter-spacing:-0.03em;margin-bottom:1.3rem;max-width:800px}
+/* shimmer on accent word */
+.shimmer{background:linear-gradient(90deg,var(--accent) 0%,#fff 40%,var(--accent) 80%);background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:shimmer 4s linear infinite}
+@keyframes shimmer{to{background-position:200% center}}
+.hero-sub{font-size:clamp(1rem,2.5vw,1.18rem);color:var(--muted);max-width:480px;margin:0 auto 2.8rem;font-weight:300;line-height:1.7}
+.cta-group{display:flex;flex-direction:column;gap:0.8rem;align-items:center;width:100%}
+.btn-primary{display:inline-flex;align-items:center;justify-content:center;gap:0.6rem;background:var(--accent);color:#060810;font-family:'Syne',sans-serif;font-weight:700;font-size:1rem;padding:0.9rem 2rem;border-radius:100px;transition:transform 0.25s,box-shadow 0.25s;width:100%;max-width:300px;position:relative;overflow:hidden}
+.btn-primary::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,0.25),transparent);opacity:0;transition:opacity 0.3s}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 0 40px rgba(0,229,160,0.5)}
+.btn-primary:hover::after{opacity:1}
+.btn-ghost{display:inline-flex;align-items:center;justify-content:center;gap:0.55rem;color:var(--muted);font-size:0.9rem;border:1px solid rgba(255,255,255,0.1);border-radius:100px;padding:0.75rem 1.6rem;width:100%;max-width:300px;transition:color 0.25s,border-color 0.25s,background 0.25s}
+.btn-ghost:hover{color:var(--text);border-color:rgba(255,255,255,0.25);background:rgba(255,255,255,0.04)}
+.scroll-hint{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:0.35rem;color:var(--muted);font-size:0.75rem;cursor:pointer;transition:color 0.2s;z-index:1}
+.scroll-hint:hover{color:var(--accent)}
+.scroll-line{width:1px;height:40px;background:linear-gradient(to bottom,var(--accent),transparent);margin-bottom:0.2rem;animation:line-grow 2s ease-in-out infinite}
+@keyframes line-grow{0%,100%{opacity:0.4;transform:scaleY(0.6)}50%{opacity:1;transform:scaleY(1)}}
+
+/* ── SECTIONS ── */
+section{padding:5.5rem 1.5rem;position:relative}
+.container{max-width:900px;margin:0 auto}
+.section-label{font-size:0.72rem;font-weight:700;letter-spacing:0.18em;color:var(--accent);text-transform:uppercase;margin-bottom:0.7rem}
+.section-title{font-size:clamp(1.9rem,5vw,2.8rem);font-weight:800;line-height:1.12;letter-spacing:-0.025em;margin-bottom:0.9rem}
+.section-sub{color:var(--muted);font-size:1rem;max-width:500px;font-weight:300;line-height:1.7}
+.center{text-align:center;display:flex;flex-direction:column;align-items:center}
+
+/* ── PAIN ── */
+.pain{background:var(--bg2)}
+.pain-grid{display:grid;grid-template-columns:1fr;gap:1px;background:rgba(255,255,255,0.06);border-radius:20px;overflow:hidden;margin-top:2.5rem;border:1px solid rgba(255,255,255,0.06)}
+.pain-card{background:var(--bg2);padding:1.8rem;display:flex;gap:1.2rem;align-items:flex-start;transition:background 0.3s}
+.pain-card:hover{background:rgba(255,255,255,0.03)}
+.pain-icon{font-size:1.6rem;flex-shrink:0;width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;background:rgba(255,80,80,0.07);border:1px solid rgba(255,80,80,0.15)}
+.pain-card h3{font-family:'Syne',sans-serif;font-size:1rem;font-weight:700;margin-bottom:0.35rem}
+.pain-card p{font-size:0.88rem;color:var(--muted);font-weight:300}
+
+/* ── SOLUTION ── */
+.steps{display:flex;flex-direction:column;margin-top:2.5rem;position:relative}
+.steps::before{content:'';position:absolute;left:18px;top:18px;bottom:18px;width:1px;background:linear-gradient(to bottom,var(--accent),rgba(0,229,160,0.1));opacity:0.3}
+.step{display:flex;gap:1.4rem;padding:1.6rem 0;position:relative}
+.step-num{font-family:'Syne',sans-serif;font-size:0.72rem;font-weight:800;color:var(--accent);background:var(--bg);border:1px solid var(--border);width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;position:relative;z-index:1;transition:background 0.3s,box-shadow 0.3s}
+.step:hover .step-num{background:rgba(0,229,160,0.1);box-shadow:0 0 20px rgba(0,229,160,0.3)}
+.step-body{padding-top:0.4rem}
+.step h3{font-family:'Syne',sans-serif;font-size:1.05rem;font-weight:700;margin-bottom:0.3rem}
+.step p{font-size:0.9rem;color:var(--muted);font-weight:300}
+.step-tag{display:inline-block;font-size:0.68rem;font-weight:700;letter-spacing:0.08em;background:rgba(0,229,160,0.1);color:var(--accent);border:1px solid var(--border);padding:0.2rem 0.65rem;border-radius:100px;margin-top:0.5rem}
+
+/* ── BENEFITS ── */
+.benefits{background:var(--bg2)}
+.benefits-grid{display:grid;grid-template-columns:1fr 1fr;gap:0.8rem;margin-top:2.5rem}
+.benefit-card{background:var(--bg3);border:1px solid rgba(255,255,255,0.06);border-radius:18px;padding:1.4rem;transition:border-color 0.4s,transform 0.4s,box-shadow 0.4s;position:relative;overflow:hidden}
+.benefit-card::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 80% 20%,rgba(0,229,160,0.06),transparent 60%);opacity:0;transition:opacity 0.4s}
+.benefit-card:hover{border-color:rgba(0,229,160,0.25);transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,0.3)}
+.benefit-card:hover::before{opacity:1}
+.benefit-card .icon{font-size:1.5rem;margin-bottom:0.8rem}
+.benefit-card h3{font-family:'Syne',sans-serif;font-size:0.95rem;font-weight:700;margin-bottom:0.3rem}
+.benefit-card p{font-size:0.83rem;color:var(--muted);font-weight:300;line-height:1.55}
+.benefit-card.span2{grid-column:1/-1}
+
+/* ── WHY ── */
+.why-grid{display:grid;grid-template-columns:1fr;gap:1rem;margin-top:2.5rem}
+.why-card{display:flex;gap:1.2rem;align-items:flex-start;padding:1.6rem;background:var(--card);border:1px solid rgba(255,255,255,0.06);border-radius:18px;transition:border-color 0.4s,transform 0.3s}
+.why-card:hover{border-color:rgba(0,229,160,0.2);transform:translateX(4px)}
+.why-num{font-family:'Syne',sans-serif;font-size:2.2rem;font-weight:800;color:var(--accent);opacity:0.18;line-height:1;flex-shrink:0;width:50px;transition:opacity 0.3s}
+.why-card:hover .why-num{opacity:0.4}
+.why-card h3{font-family:'Syne',sans-serif;font-size:1rem;font-weight:700;margin-bottom:0.3rem}
+.why-card p{font-size:0.88rem;color:var(--muted);font-weight:300}
+
+/* ── PORTFOLIO ── */
+.portfolio{background:var(--bg2);overflow:hidden}
+.demo-wrapper{margin-top:2.5rem;border-radius:24px;border:1px solid rgba(255,255,255,0.08);overflow:hidden;background:var(--bg3);position:relative}
+.demo-browser-bar{background:rgba(255,255,255,0.04);padding:0.7rem 1rem;display:flex;align-items:center;gap:0.6rem;border-bottom:1px solid rgba(255,255,255,0.06)}
+.demo-dot{width:10px;height:10px;border-radius:50%}
+.demo-url{flex:1;background:rgba(255,255,255,0.05);border-radius:6px;height:22px;display:flex;align-items:center;padding:0 0.7rem;font-size:0.7rem;color:var(--muted);margin:0 0.5rem}
+.demo-tabs{display:flex;gap:0.5rem;margin-top:1.5rem;padding:0 1.5rem;overflow-x:auto;scrollbar-width:none}
+.demo-tabs::-webkit-scrollbar{display:none}
+.demo-tab{font-family:'Syne',sans-serif;font-size:0.75rem;font-weight:700;padding:0.45rem 1rem;border-radius:100px;border:1px solid rgba(255,255,255,0.08);color:var(--muted);white-space:nowrap;cursor:pointer;transition:all 0.3s;background:transparent}
+.demo-tab.active{background:var(--accent);color:#060810;border-color:var(--accent)}
+.demo-screen{display:none;animation:fadeIn 0.4s ease}
+.demo-screen.active{display:block}
+@keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+/* Restaurant demo */
+.dr{min-height:360px;background:#0f0500;display:flex;flex-direction:column;position:relative;overflow:hidden}
+.dr-bg-img{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1513104890138-7c749659a591?w=800&q=80') center/cover no-repeat;opacity:0.18}
+.dr-bg-grad{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(15,5,0,0.4) 0%,rgba(15,5,0,0.7) 50%,#0f0500 100%)}
+.dr-inner{position:relative;z-index:1;padding:1.4rem 1.5rem;display:flex;flex-direction:column;height:100%}
+.dr-nav{display:flex;justify-content:space-between;align-items:center;margin-bottom:auto}
+.dr-nav-logo{font-family:'Syne',sans-serif;font-size:1rem;font-weight:800;color:#ff9f43;display:flex;align-items:center;gap:0.4rem}
+.dr-nav-links{display:flex;gap:1.2rem;font-size:0.72rem;color:rgba(255,255,255,0.45);font-family:'DM Sans',sans-serif}
+.dr-center{flex:1;display:flex;flex-direction:column;justify-content:center;padding:1.5rem 0 1rem}
+.dr-tag{font-size:0.65rem;letter-spacing:0.18em;color:#ff9f43;text-transform:uppercase;margin-bottom:0.6rem;opacity:0.8}
+.dr-title{font-family:'Syne',sans-serif;font-size:2.4rem;font-weight:800;color:#fff;line-height:1.05;margin-bottom:0.5rem}
+.dr-title span{color:#ff9f43}
+.dr-sub{font-size:0.83rem;color:rgba(255,255,255,0.5);margin-bottom:1.4rem;font-family:'DM Sans',sans-serif;font-weight:300}
+.dr-actions{display:flex;gap:0.7rem;align-items:center;flex-wrap:wrap}
+.dr-btn1{background:#ff9f43;color:#0f0500;font-family:'Syne',sans-serif;font-size:0.8rem;font-weight:700;padding:0.6rem 1.4rem;border-radius:100px;display:inline-flex;align-items:center;gap:0.4rem;white-space:nowrap}
+.dr-btn2{border:1px solid rgba(255,159,67,0.35);color:rgba(255,159,67,0.8);font-family:'DM Sans',sans-serif;font-size:0.8rem;padding:0.6rem 1.3rem;border-radius:100px;white-space:nowrap}
+.dr-menu{display:grid;grid-template-columns:repeat(3,1fr);gap:0.7rem;margin-top:1.2rem}
+.dr-item{background:rgba(255,255,255,0.05);border:1px solid rgba(255,159,67,0.12);border-radius:12px;overflow:hidden;backdrop-filter:blur(8px)}
+.dr-item-img{height:72px;background-size:cover;background-position:center;position:relative}
+.dr-item-img::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,transparent,rgba(15,5,0,0.6))}
+.dr-item-info{padding:0.6rem 0.7rem}
+.dr-item-name{font-family:'DM Sans',sans-serif;font-size:0.72rem;color:rgba(255,255,255,0.75);margin-bottom:0.2rem;font-weight:400}
+.dr-item-price{font-family:'Syne',sans-serif;font-size:0.88rem;font-weight:700;color:#ff9f43}
+/* Gym demo — unchanged styles kept minimal */
+.gym{min-height:320px;background:linear-gradient(160deg,#08001a,#1a0040);padding:2rem 1.5rem;display:flex;flex-direction:column;position:relative;overflow:hidden}
+.gym::before{content:'ELITE';position:absolute;right:-1rem;top:50%;transform:translateY(-50%);font-family:'Syne',sans-serif;font-size:8rem;font-weight:800;color:rgba(139,92,246,0.04);line-height:1;pointer-events:none}
+.gym-label{font-size:0.68rem;letter-spacing:0.18em;color:rgba(139,92,246,0.6);text-transform:uppercase;margin-bottom:0.5rem}
+.gym-title{font-family:'Syne',sans-serif;font-size:2.4rem;font-weight:800;color:#fff;line-height:1.05;margin-bottom:0.3rem}
+.gym-title span{color:#8b5cf6}
+.gym-sub{font-size:0.82rem;color:rgba(255,255,255,0.35);margin-bottom:1.5rem;max-width:280px}
+.gym-btn{background:linear-gradient(90deg,#8b5cf6,#6d28d9);color:#fff;font-size:0.8rem;font-weight:700;padding:0.6rem 1.5rem;border-radius:100px;display:inline-block;margin-bottom:1.8rem;width:fit-content}
+.gym-stats{display:flex;gap:1.5rem}
+.gym-stat-num{font-family:'Syne',sans-serif;font-size:1.5rem;font-weight:800;color:#8b5cf6}
+.gym-stat-label{font-size:0.7rem;color:rgba(255,255,255,0.3)}
+/* Shop demo */
+.shop{min-height:360px;background:#08050f;display:flex;flex-direction:column;position:relative;overflow:hidden}
+.shop-bg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?w=800&q=80') center/cover no-repeat;opacity:0.12}
+.shop-bg-grad{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(8,5,15,0.5),rgba(8,5,15,0.8) 60%,#08050f)}
+.shop-inner{position:relative;z-index:1;padding:1.4rem 1.5rem;display:flex;flex-direction:column}
+.shop-nav{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.2rem}
+.shop-logo{font-family:'Syne',sans-serif;font-size:1rem;font-weight:800;color:#c084fc;letter-spacing:0.05em}
+.shop-nav-r{display:flex;align-items:center;gap:1rem}
+.shop-nav-r span{font-size:0.75rem;color:rgba(255,255,255,0.35);font-family:'DM Sans',sans-serif}
+.shop-cart-badge{background:#c084fc;color:#08050f;font-size:0.6rem;font-weight:800;width:16px;height:16px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;margin-left:0.2rem;vertical-align:super}
+.shop-hero{text-align:center;padding:0.8rem 0 1.2rem}
+.shop-hero-tag{font-size:0.65rem;letter-spacing:0.16em;color:#c084fc;text-transform:uppercase;margin-bottom:0.4rem;opacity:0.75}
+.shop-hero-title{font-family:'Syne',sans-serif;font-size:1.9rem;font-weight:800;color:#fff;margin-bottom:0.3rem;line-height:1.1}
+.shop-hero-sub{font-size:0.78rem;color:rgba(255,255,255,0.35);font-family:'DM Sans',sans-serif;font-weight:300}
+.shop-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0.7rem}
+.shop-card{background:rgba(255,255,255,0.04);border:1px solid rgba(192,132,252,0.15);border-radius:12px;overflow:hidden;transition:border-color 0.3s}
+.shop-card-img{height:80px;background-size:cover;background-position:center;position:relative}
+.shop-card-img::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,transparent 40%,rgba(8,5,15,0.7))}
+.shop-card-body{padding:0.6rem 0.7rem}
+.shop-card-name{font-family:'DM Sans',sans-serif;font-size:0.7rem;color:rgba(255,255,255,0.55);margin-bottom:0.25rem;font-weight:400}
+.shop-card-price{font-family:'Syne',sans-serif;font-size:0.9rem;font-weight:700;color:#c084fc}
+.shop-card-btn{display:block;width:100%;background:rgba(192,132,252,0.12);border:none;border-top:1px solid rgba(192,132,252,0.12);color:#c084fc;font-family:'DM Sans',sans-serif;font-size:0.7rem;font-weight:500;padding:0.4rem;text-align:center;cursor:pointer}
+.demo-caption{padding:1.2rem 1.5rem;background:rgba(0,229,160,0.04);border-top:1px solid rgba(0,229,160,0.1)}
+.demo-caption p{font-size:0.85rem;color:var(--muted);font-weight:300}
+.demo-caption strong{color:var(--accent);font-weight:500}
+
+/* ── CTA SECTION ── */
+.cta-section{text-align:center;padding:6rem 1.5rem;position:relative;overflow:hidden}
+.cta-bg{position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,229,160,0.05),rgba(0,100,200,0.03));border-top:1px solid rgba(0,229,160,0.12);border-bottom:1px solid rgba(0,229,160,0.12)}
+.cta-glow{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:300px;background:radial-gradient(ellipse,rgba(0,229,160,0.1),transparent 70%);pointer-events:none}
+.cta-section h2{font-size:clamp(2rem,6vw,3.2rem);font-weight:800;letter-spacing:-0.025em;margin-bottom:0.8rem;position:relative;z-index:1}
+.cta-section p{color:var(--muted);max-width:380px;margin:0 auto 2.2rem;font-weight:300;position:relative;z-index:1}
+.consulta-free{display:inline-flex;align-items:center;gap:0.4rem;font-size:0.8rem;color:var(--accent);background:rgba(0,229,160,0.08);border:1px solid var(--border);border-radius:100px;padding:0.3rem 0.9rem;margin-bottom:1.2rem;position:relative;z-index:1}
+
+/* ── CONTACT ── */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:0.8rem;margin-top:2.5rem;max-width:360px;margin-left:auto;margin-right:auto}
+.contact-btn{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.5rem;background:var(--card);border:1px solid rgba(255,255,255,0.07);border-radius:18px;padding:1.5rem 1rem;color:var(--text);transition:all 0.35s;text-align:center;position:relative;overflow:hidden}
+.contact-btn::before{content:'';position:absolute;inset:0;opacity:0;transition:opacity 0.35s}
+.contact-btn:hover{transform:translateY(-4px)}
+.contact-btn:hover::before{opacity:1}
+.cb-icon{font-size:1.4rem;width:48px;height:48px;border-radius:13px;display:flex;align-items:center;justify-content:center;transition:transform 0.3s;position:relative;z-index:1}
+.contact-btn:hover .cb-icon{transform:scale(1.1)}
+.contact-btn span{font-size:0.82rem;font-weight:600;font-family:'Syne',sans-serif;letter-spacing:0.03em;position:relative;z-index:1}
+.cb-wa{border-color:rgba(37,211,102,0.15)}
+.cb-wa:hover{border-color:rgba(37,211,102,0.4);box-shadow:0 12px 36px rgba(37,211,102,0.12)}
+.cb-wa::before{background:rgba(37,211,102,0.05)}
+.cb-wa .cb-icon{background:rgba(37,211,102,0.1);color:#25d366}
+.cb-ig{border-color:rgba(225,48,108,0.15)}
+.cb-ig:hover{border-color:rgba(225,48,108,0.4);box-shadow:0 12px 36px rgba(225,48,108,0.1)}
+.cb-ig::before{background:rgba(225,48,108,0.05)}
+.cb-ig .cb-icon{background:rgba(225,48,108,0.1);color:#e1306c}
+.cb-em{border-color:rgba(0,160,255,0.15);grid-column:1/-1}
+.cb-em:hover{border-color:rgba(0,160,255,0.4);box-shadow:0 12px 36px rgba(0,160,255,0.1)}
+.cb-em::before{background:rgba(0,160,255,0.05)}
+.cb-em .cb-icon{background:rgba(0,160,255,0.1);color:#0096ff}
+
+/* ── FOOTER ── */
+footer{background:var(--bg2);padding:2.5rem 1.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.04)}
+.f-logo{font-family:'Syne',sans-serif;font-weight:800;color:var(--accent);font-size:1.1rem;margin-bottom:0.4rem;letter-spacing:0.06em}
+footer p{font-size:0.8rem;color:var(--muted)}
+.f-links{display:flex;justify-content:center;gap:1.2rem;margin-top:1rem}
+.f-links a{color:var(--muted);font-size:1rem;transition:color 0.2s}
+.f-links a:hover{color:var(--accent)}
+
+/* ── WA FLOAT ── */
+.wa-float{position:fixed;bottom:1.5rem;right:1.5rem;z-index:200;width:58px;height:58px;background:#25d366;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.5rem;box-shadow:0 4px 24px rgba(37,211,102,0.45);transition:transform 0.25s,box-shadow 0.25s;animation:wa-pop 0.5s 1.2s cubic-bezier(0.34,1.56,0.64,1) both}
+@keyframes wa-pop{from{opacity:0;transform:scale(0.4)}to{opacity:1;transform:scale(1)}}
+.wa-float:hover{transform:scale(1.12) rotate(-5deg);box-shadow:0 8px 32px rgba(37,211,102,0.55)}
+
+/* ── REVEAL ── */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity 0.75s cubic-bezier(0.22,1,0.36,1),transform 0.75s cubic-bezier(0.22,1,0.36,1)}
+.reveal.visible{opacity:1;transform:none}
+.d1{transition-delay:0.08s}
+.d2{transition-delay:0.16s}
+.d3{transition-delay:0.24s}
+.d4{transition-delay:0.32s}
+
+/* ── SEPARATOR ── */
+.sep{height:1px;background:linear-gradient(90deg,transparent,rgba(0,229,160,0.15),transparent);margin:0}
+
+@media(min-width:600px){
+.pain-grid{grid-template-columns:1fr 1fr 1fr}
+.benefits-grid{grid-template-columns:1fr 1fr 1fr}
+.benefit-card.span2{grid-column:auto}
+.why-grid{grid-template-columns:1fr 1fr 1fr}
+.cta-group{flex-direction:row;justify-content:center}
+.btn-primary,.btn-ghost{width:auto;max-width:none}
+.contact-grid{grid-template-columns:1fr 1fr 1fr;max-width:480px}
+.cb-em{grid-column:auto}
+}
+</style>
+</head>
+<body>
+
+<div class="cursor-glow" id="cursorGlow"></div>
+
+<!-- WA FLOAT -->
+<a href="https://wa.me/5492645860993?text=Hola!%20Vi%20tu%20p%C3%A1gina%20y%20me%20interesa%20saber%20m%C3%A1s%20sobre%20el%20servicio%20de%20landing%20page" class="wa-float" target="_blank" aria-label="WhatsApp">
+  <i class="fa-brands fa-whatsapp"></i>
+</a>
+
+<!-- NAV -->
+<nav id="mainNav">
+  <div class="logo">TEVS<span> BUSINESS</span></div>
+  <a href="https://wa.me/5492645860993?text=Hola!%20Vi%20tu%20p%C3%A1gina%20y%20me%20interesa%20saber%20m%C3%A1s%20sobre%20el%20servicio%20de%20landing%20page" class="nav-cta" target="_blank">Consultá gratis</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="mesh"><div class="mesh-blob"></div><div class="mesh-blob"></div><div class="mesh-blob"></div></div>
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <div class="badge"><span class="badge-dot"></span> Diseño web profesional para negocios</div>
+    <h1>Tu negocio merece estar<br>en internet y <span class="shimmer">verse increíble</span></h1>
+    <p class="hero-sub">Creamos landing pages y sitios web que atraen clientes, transmiten confianza y generan resultados reales.</p>
+    <div class="cta-group">
+      <a href="https://wa.me/5492645860993?text=Hola!%20Vi%20tu%20p%C3%A1gina%20y%20me%20interesa%20saber%20m%C3%A1s%20sobre%20el%20servicio%20de%20landing%20page" class="btn-primary" target="_blank">
+        <i class="fa-brands fa-whatsapp"></i> Quiero mi página web
+      </a>
+      <a href="mailto:tomasvildozos@gmail.com" class="btn-ghost">
+        <i class="fa-regular fa-envelope"></i> Escribir por email
+      </a>
+    </div>
+  </div>
+  <div class="scroll-hint" id="scrollBtn">
+    <div class="scroll-line"></div>
+    <span>Conocé más</span>
+  </div>
+</section>
+
+<div class="sep"></div>
+
+<!-- PAIN -->
+<section class="pain">
+  <div class="container">
+    <div class="section-label reveal">El problema</div>
+    <h2 class="section-title reveal">Sin página web, tu negocio es invisible</h2>
+    <p class="section-sub reveal">Hoy, si no estás en internet, para tus clientes potenciales simplemente no existís.</p>
+    <div class="pain-grid">
+      <div class="pain-card reveal d1">
+        <div class="pain-icon">🔍</div>
+        <div>
+          <h3>No te encuentran en Google</h3>
+          <p>Cuando alguien busca tu servicio, aparece tu competencia — no vos.</p>
+        </div>
+      </div>
+      <div class="pain-card reveal d2">
+        <div class="pain-icon">💸</div>
+        <div>
+          <h3>Perdés ventas mientras dormís</h3>
+          <p>Sin presencia online, los clientes se van a otro lado antes de contactarte.</p>
+        </div>
+      </div>
+      <div class="pain-card reveal d3">
+        <div class="pain-icon">📈</div>
+        <div>
+          <h3>Tu competencia ya está adelante</h3>
+          <p>Cada día sin web es un día que tu competencia crece y vos no.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="sep"></div>
+
+<!-- SOLUTION -->
+<section>
+  <div class="container">
+    <div class="section-label reveal">Cómo trabajamos</div>
+    <h2 class="section-title reveal">Simple, rápido y<br><em>sin vueltas</em></h2>
+    <p class="section-sub reveal">Tu web lista en 10 a 14 días. Sin tecnicismos, sin sorpresas.</p>
+    <div class="steps">
+      <div class="step reveal d1">
+        <div class="step-num">01</div>
+        <div class="step-body">
+          <h3>Me contactás</h3>
+          <p>Hablamos por WhatsApp, me contás tu negocio y qué necesitás. La consulta es gratis y sin compromiso.</p>
+          <div class="step-tag">⚡ Respuesta inmediata</div>
+        </div>
+      </div>
+      <div class="step reveal d2">
+        <div class="step-num">02</div>
+        <div class="step-body">
+          <h3>Diseñamos juntos</h3>
+          <p>Creo una propuesta personalizada para tu marca. Vos aprobás el diseño antes de publicar.</p>
+          <div class="step-tag">✏️ 100% personalizado</div>
+        </div>
+      </div>
+      <div class="step reveal d3">
+        <div class="step-num">03</div>
+        <div class="step-body">
+          <h3>Tu web está online</h3>
+          <p>Entre 10 y 14 días después de que arrancamos, tu negocio tiene presencia profesional en internet — listo para recibir clientes.</p>
+          <div class="step-tag">🚀 10 a 14 días</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="sep"></div>
+
+<!-- BENEFITS -->
+<section class="benefits">
+  <div class="container">
+    <div class="center">
+      <div class="section-label reveal">Beneficios</div>
+      <h2 class="section-title reveal">Lo que una buena web puede hacer<br>por tu negocio</h2>
+    </div>
+    <div class="benefits-grid">
+      <div class="benefit-card reveal d1"><div class="icon">⚡</div><h3>Presencia 24/7</h3><p>Tu página trabaja para vos siempre, incluso cuando estás descansando.</p></div>
+      <div class="benefit-card reveal d2"><div class="icon">🎯</div><h3>Más clientes</h3><p>Atraé personas que ya están buscando exactamente lo que ofrecés.</p></div>
+      <div class="benefit-card reveal d1"><div class="icon">💎</div><h3>Imagen profesional</h3><p>Generá confianza desde el primer segundo con un diseño que impacta.</p></div>
+      <div class="benefit-card reveal d2"><div class="icon">🚀</div><h3>Potenciá tu marca</h3><p>Una buena web hace que te recuerden y te diferencien de la competencia.</p></div>
+      <div class="benefit-card span2 reveal"><div class="icon">🤖</div><h3>Consultas y ventas automáticas</h3><p>Receptá pedidos y consultas sin hacer nada. Tu web los captura mientras vos hacés otra cosa.</p></div>
+    </div>
+  </div>
+</section>
+
+<div class="sep"></div>
+
+<!-- WHY -->
+<section>
+  <div class="container">
+    <div class="section-label reveal">Por qué elegirnos</div>
+    <h2 class="section-title reveal">Diseño que <em>convierte</em>,<br>no solo que se ve lindo</h2>
+    <div class="why-grid">
+      <div class="why-card reveal d1"><div class="why-num">01</div><div><h3>Diseño moderno y personalizado</h3><p>Nada de templates genéricos. Cada web es única y pensada para tu negocio específico.</p></div></div>
+      <div class="why-card reveal d2"><div class="why-num">02</div><div><h3>Entrega en 10 a 14 días</h3><p>Sin esperar meses. Tu web lista rápido, con revisiones incluidas hasta que quedes conforme.</p></div></div>
+      <div class="why-card reveal d3"><div class="why-num">03</div><div><h3>Soporte y asesoramiento</h3><p>No te dejamos solo después. Te acompañamos para que saques el máximo provecho de tu web.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<div class="sep"></div>
+
+<!-- PORTFOLIO -->
+<section class="portfolio">
+  <div class="container">
+    <div class="center">
+      <div class="section-label reveal">Portfolio</div>
+      <h2 class="section-title reveal">Así se ven nuestros trabajos</h2>
+      <p class="section-sub reveal">Cada web es diseñada a medida. Elegí un rubro y mirá cómo podría quedar el tuyo.</p>
+    </div>
+    <div class="demo-wrapper reveal" style="margin-top:2.5rem">
+      <div class="demo-browser-bar">
+        <div class="demo-dot" style="background:#ff5f57"></div>
+        <div class="demo-dot" style="background:#febc2e"></div>
+        <div class="demo-dot" style="background:#28c840"></div>
+        <div class="demo-url"><span id="demoUrl">tevsbusiness.com/tu-negocio</span></div>
+      </div>
+      <div class="demo-tabs">
+        <div class="demo-tab active" data-tab="resto" data-url="laleña-restaurante.com">🍕 Restaurante</div>
+        <div class="demo-tab" data-tab="gym" data-url="elitegym-fitness.com">💪 Gimnasio</div>
+        <div class="demo-tab" data-tab="shop" data-url="mitienda-online.com">🛍️ Tienda</div>
+      </div>
+
+      <div class="demo-screen active" id="tab-resto">
+        <div class="dr">
+          <div class="dr-bg-img"></div>
+          <div class="dr-bg-grad"></div>
+          <div class="dr-inner">
+            <div class="dr-nav">
+              <div class="dr-nav-logo"><svg width="14" height="14" viewBox="0 0 24 24" fill="#ff9f43"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg> La Leña</div>
+              <div class="dr-nav-links"><span>Menú</span><span>Nosotros</span><span>Contacto</span></div>
+            </div>
+            <div class="dr-center">
+              <div class="dr-tag">Restaurante & Delivery · San Juan</div>
+              <div class="dr-title">Sabor que se<br><span>recuerda</span></div>
+              <div class="dr-sub">La mejor pizza a la piedra, con delivery a tu puerta</div>
+              <div class="dr-actions">
+                <div class="dr-btn1"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.995 17.16c-.362.985-1.801 1.927-2.61 2.045-.732.105-1.658.15-2.675-.168-.616-.196-1.404-.458-2.415-.898-4.252-1.848-7.023-6.196-7.233-6.487-.21-.291-1.712-2.281-1.712-4.348s1.082-3.094 1.466-3.516c.384-.422.837-.527 1.117-.527.28 0 .559.003.804.014.258.012.603-.098.944.72.351.84 1.192 2.906 1.297 3.115.105.21.175.456.035.729-.14.273-.21.443-.42.682-.21.238-.441.532-.63.714-.21.203-.428.422-.184.828.244.406 1.085 1.794 2.328 2.908 1.6 1.428 2.948 1.87 3.36 2.079.413.21.651.175.893-.105.242-.28 1.036-1.208 1.312-1.622.275-.413.55-.344.928-.207.378.137 2.4 1.132 2.812 1.338.413.207.688.31.791.482.103.172.103.996-.259 1.981z"/></svg> Pedir por WhatsApp</div>
+                <div class="dr-btn2">Ver menú completo</div>
+              </div>
+            </div>
+            <div class="dr-menu">
+              <div class="dr-item">
+                <div class="dr-item-img" style="background-image:url('https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=300&q=80')"></div>
+                <div class="dr-item-info"><div class="dr-item-name">Napolitana</div><div class="dr-item-price">$3.500</div></div>
+              </div>
+              <div class="dr-item">
+                <div class="dr-item-img" style="background-image:url('https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=300&q=80')"></div>
+                <div class="dr-item-info"><div class="dr-item-name">Fugazzeta</div><div class="dr-item-price">$4.200</div></div>
+              </div>
+              <div class="dr-item">
+                <div class="dr-item-img" style="background-image:url('https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=300&q=80')"></div>
+                <div class="dr-item-info"><div class="dr-item-name">Pasta casera</div><div class="dr-item-price">$2.800</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="demo-screen" id="tab-gym">
+        <div class="gym">
+          <div class="gym-label">High Performance Training</div>
+          <div class="gym-title">ELITE<br><span>GYM</span></div>
+          <div class="gym-sub">Transformá tu cuerpo con los mejores entrenadores de San Juan</div>
+          <div class="gym-btn">Empezar ahora — consultá gratis →</div>
+          <div class="gym-stats">
+            <div><div class="gym-stat-num">+500</div><div class="gym-stat-label">Alumnos activos</div></div>
+            <div><div class="gym-stat-num">8+</div><div class="gym-stat-label">Años de experiencia</div></div>
+            <div><div class="gym-stat-num">3</div><div class="gym-stat-label">Sedes disponibles</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="demo-screen" id="tab-shop">
+        <div class="shop">
+          <div class="shop-bg"></div>
+          <div class="shop-bg-grad"></div>
+          <div class="shop-inner">
+            <div class="shop-nav">
+              <div class="shop-logo">◈ NOKTA</div>
+              <div class="shop-nav-r">
+                <span>Colecciones</span>
+                <span>Nosotros</span>
+                <span>🛒<span class="shop-cart-badge">2</span></span>
+              </div>
+            </div>
+            <div class="shop-hero">
+              <div class="shop-hero-tag">Nueva colección 2026</div>
+              <div class="shop-hero-title">Moda que te define</div>
+              <div class="shop-hero-sub">Envíos a todo el país · Cuotas sin interés</div>
+            </div>
+            <div class="shop-grid">
+              <div class="shop-card">
+                <div class="shop-card-img" style="background-image:url('https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=300&q=80')"></div>
+                <div class="shop-card-body"><div class="shop-card-name">Cartera cuero</div><div class="shop-card-price">$12.500</div></div>
+                <div class="shop-card-btn">Agregar al carrito</div>
+              </div>
+              <div class="shop-card">
+                <div class="shop-card-img" style="background-image:url('https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=300&q=80')"></div>
+                <div class="shop-card-body"><div class="shop-card-name">Zapatillas</div><div class="shop-card-price">$18.900</div></div>
+                <div class="shop-card-btn">Agregar al carrito</div>
+              </div>
+              <div class="shop-card">
+                <div class="shop-card-img" style="background-image:url('https://images.unsplash.com/photo-1511499767150-a48a237f0083?w=300&q=80')"></div>
+                <div class="shop-card-body"><div class="shop-card-name">Lentes</div><div class="shop-card-price">$6.400</div></div>
+                <div class="shop-card-btn">Agregar al carrito</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="demo-caption">
+        <p>Este es solo un <strong>ejemplo de demostración</strong>. Tu web será diseñada 100% a medida, con tus colores, tu marca y tu contenido. <a href="https://wa.me/5492645860993?text=Hola!%20Quiero%20ver%20c%C3%B3mo%20quedar%C3%ADa%20mi%20web" target="_blank" style="color:var(--accent);font-weight:500">Consultá cómo quedaría la tuya →</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="sep"></div>
+
+<!-- CTA CENTRAL -->
+<section class="cta-section">
+  <div class="cta-bg"></div>
+  <div class="cta-glow"></div>
+  <div class="consulta-free reveal"><i class="fa-solid fa-circle-check"></i> Consulta gratis · Sin compromiso</div>
+  <h2 class="reveal">¿Listo para llevar tu negocio<br>al siguiente nivel?</h2>
+  <p class="reveal">Hablemos hoy. Te cuento cómo podemos hacer la web perfecta para tu negocio.</p>
+  <a href="https://wa.me/5492645860993?text=Hola!%20Vi%20tu%20p%C3%A1gina%20y%20me%20interesa%20saber%20m%C3%A1s%20sobre%20el%20servicio%20de%20landing%20page" class="btn-primary reveal" target="_blank" style="margin:0 auto">
+    <i class="fa-brands fa-whatsapp"></i> Empezar ahora — es gratis
+  </a>
+</section>
+
+<div class="sep"></div>
+
+<!-- CONTACT -->
+<section class="center">
+  <div class="section-label reveal">Contacto</div>
+  <h2 class="section-title reveal">Hablemos</h2>
+  <p class="section-sub reveal">Elegí el medio que más te guste. Respondemos rápido.</p>
+  <div class="contact-grid">
+    <a href="https://wa.me/5492645860993?text=Hola!%20Vi%20tu%20p%C3%A1gina%20y%20me%20interesa%20saber%20m%C3%A1s%20sobre%20el%20servicio%20de%20landing%20page" class="contact-btn cb-wa reveal d1" target="_blank">
+      <div class="cb-icon"><i class="fa-brands fa-whatsapp"></i></div>
+      <span>WhatsApp</span>
+    </a>
+    <a href="https://www.instagram.com/tomasvildozo_/" class="contact-btn cb-ig reveal d2" target="_blank">
+      <div class="cb-icon"><i class="fa-brands fa-instagram"></i></div>
+      <span>Instagram</span>
+    </a>
+    <a href="mailto:tomasvildozos@gmail.com" class="contact-btn cb-em reveal d3">
+      <div class="cb-icon"><i class="fa-regular fa-envelope"></i></div>
+      <span>tomasvildozos@gmail.com</span>
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="f-logo">TEVS BUSINESS</div>
+  <p>© 2026 — Páginas web que venden.</p>
+  <div class="f-links">
+    <a href="https://wa.me/5492645860993" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+    <a href="https://www.instagram.com/tomasvildozo_/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+    <a href="mailto:tomasvildozos@gmail.com"><i class="fa-regular fa-envelope"></i></a>
+  </div>
+</footer>
+
+<script>
+// Cursor glow
+const glow = document.getElementById('cursorGlow');
+document.addEventListener('mousemove', e => {
+  glow.style.left = e.clientX + 'px';
+  glow.style.top = e.clientY + 'px';
+});
+
+// Nav scroll
+const nav = document.getElementById('mainNav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 40);
+});
+
+// Scroll hint
+document.getElementById('scrollBtn').addEventListener('click', () => {
+  document.querySelector('.pain').scrollIntoView({ behavior: 'smooth' });
+});
+
+// Reveal on scroll
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+// Portfolio tabs
+const tabs = document.querySelectorAll('.demo-tab');
+const urlEl = document.getElementById('demoUrl');
+tabs.forEach(tab => {
+  tab.addEventListener('click', () => {
+    tabs.forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.demo-screen').forEach(s => s.classList.remove('active'));
+    tab.classList.add('active');
+    document.getElementById('tab-' + tab.dataset.tab).classList.add('active');
+    urlEl.textContent = tab.dataset.url;
+  });
+});
+</script>
+</body>
+</html>
