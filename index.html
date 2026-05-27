@@ -165,28 +165,82 @@ section{padding:5.5rem 1.5rem;position:relative}
 .gym-stats{display:flex;gap:1.5rem}
 .gym-stat-num{font-family:'Syne',sans-serif;font-size:1.5rem;font-weight:800;color:#8b5cf6}
 .gym-stat-label{font-size:0.7rem;color:rgba(255,255,255,0.3)}
-/* Shop demo */
-.shop{min-height:360px;background:#08050f;display:flex;flex-direction:column;position:relative;overflow:hidden}
-.shop-bg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?w=800&q=80') center/cover no-repeat;opacity:0.12}
-.shop-bg-grad{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(8,5,15,0.5),rgba(8,5,15,0.8) 60%,#08050f)}
-.shop-inner{position:relative;z-index:1;padding:1.4rem 1.5rem;display:flex;flex-direction:column}
-.shop-nav{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.2rem}
-.shop-logo{font-family:'Syne',sans-serif;font-size:1rem;font-weight:800;color:#c084fc;letter-spacing:0.05em}
-.shop-nav-r{display:flex;align-items:center;gap:1rem}
-.shop-nav-r span{font-size:0.75rem;color:rgba(255,255,255,0.35);font-family:'DM Sans',sans-serif}
-.shop-cart-badge{background:#c084fc;color:#08050f;font-size:0.6rem;font-weight:800;width:16px;height:16px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;margin-left:0.2rem;vertical-align:super}
-.shop-hero{text-align:center;padding:0.8rem 0 1.2rem}
-.shop-hero-tag{font-size:0.65rem;letter-spacing:0.16em;color:#c084fc;text-transform:uppercase;margin-bottom:0.4rem;opacity:0.75}
-.shop-hero-title{font-family:'Syne',sans-serif;font-size:1.9rem;font-weight:800;color:#fff;margin-bottom:0.3rem;line-height:1.1}
-.shop-hero-sub{font-size:0.78rem;color:rgba(255,255,255,0.35);font-family:'DM Sans',sans-serif;font-weight:300}
-.shop-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0.7rem}
-.shop-card{background:rgba(255,255,255,0.04);border:1px solid rgba(192,132,252,0.15);border-radius:12px;overflow:hidden;transition:border-color 0.3s}
-.shop-card-img{height:80px;background-size:cover;background-position:center;position:relative}
-.shop-card-img::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,transparent 40%,rgba(8,5,15,0.7))}
-.shop-card-body{padding:0.6rem 0.7rem}
-.shop-card-name{font-family:'DM Sans',sans-serif;font-size:0.7rem;color:rgba(255,255,255,0.55);margin-bottom:0.25rem;font-weight:400}
-.shop-card-price{font-family:'Syne',sans-serif;font-size:0.9rem;font-weight:700;color:#c084fc}
-.shop-card-btn{display:block;width:100%;background:rgba(192,132,252,0.12);border:none;border-top:1px solid rgba(192,132,252,0.12);color:#c084fc;font-family:'DM Sans',sans-serif;font-size:0.7rem;font-weight:500;padding:0.4rem;text-align:center;cursor:pointer}
+/* ── CONCESIONARIA ── */
+.cars{min-height:380px;background:#050810;display:flex;flex-direction:column;position:relative;overflow:hidden}
+.cars-bg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=900&q=80') center/cover no-repeat;opacity:0.15}
+.cars-grad{position:absolute;inset:0;background:linear-gradient(160deg,rgba(5,8,16,0.6) 0%,rgba(5,8,16,0.75) 50%,#050810 100%)}
+.cars-inner{position:relative;z-index:1;padding:1.4rem 1.5rem;display:flex;flex-direction:column;gap:0}
+.cars-nav{display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem}
+.cars-logo{font-family:'Syne',sans-serif;font-size:1rem;font-weight:800;color:#fff;letter-spacing:0.08em}
+.cars-logo span{color:#e63946}
+.cars-nav-links{display:flex;gap:1rem;font-size:0.7rem;color:rgba(255,255,255,0.38);font-family:'DM Sans',sans-serif}
+.cars-hero{margin-bottom:1.2rem}
+.cars-tag{font-size:0.65rem;letter-spacing:0.16em;color:#e63946;text-transform:uppercase;margin-bottom:0.5rem;opacity:0.85}
+.cars-title{font-family:'Syne',sans-serif;font-size:2rem;font-weight:800;color:#fff;line-height:1.1;margin-bottom:0.4rem}
+.cars-title span{color:#e63946}
+.cars-sub{font-size:0.8rem;color:rgba(255,255,255,0.4);margin-bottom:1rem;font-family:'DM Sans',sans-serif;font-weight:300}
+.cars-actions{display:flex;gap:0.6rem;flex-wrap:wrap}
+.cars-btn1{background:#e63946;color:#fff;font-family:'Syne',sans-serif;font-size:0.78rem;font-weight:700;padding:0.55rem 1.3rem;border-radius:100px;white-space:nowrap}
+.cars-btn2{border:1px solid rgba(230,57,70,0.35);color:rgba(230,57,70,0.85);font-family:'DM Sans',sans-serif;font-size:0.78rem;padding:0.55rem 1.2rem;border-radius:100px;white-space:nowrap}
+.cars-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0.7rem}
+.cars-card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:12px;overflow:hidden}
+.cars-card-img{height:80px;background-size:cover;background-position:center}
+.cars-card-body{padding:0.65rem 0.75rem}
+.cars-card-badge{display:inline-block;font-size:0.6rem;font-weight:700;letter-spacing:0.06em;background:rgba(230,57,70,0.15);color:#e63946;border:1px solid rgba(230,57,70,0.25);padding:0.15rem 0.5rem;border-radius:100px;margin-bottom:0.3rem;text-transform:uppercase}
+.cars-badge-used{background:rgba(255,200,0,0.1);color:#ffc800;border-color:rgba(255,200,0,0.25)}
+.cars-card-name{font-family:'Syne',sans-serif;font-size:0.85rem;font-weight:700;color:#fff;margin-bottom:0.15rem}
+.cars-card-price{font-family:'Syne',sans-serif;font-size:0.82rem;font-weight:700;color:#e63946;margin-bottom:0.15rem}
+.cars-card-detail{font-size:0.65rem;color:rgba(255,255,255,0.35);font-family:'DM Sans',sans-serif}
+
+/* ── VIAJES ── */
+.travel{min-height:380px;background:#020d18;display:flex;flex-direction:column;position:relative;overflow:hidden}
+.travel-bg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=900&q=80') center/cover no-repeat;opacity:0.18}
+.travel-grad{position:absolute;inset:0;background:linear-gradient(160deg,rgba(2,13,24,0.5),rgba(2,13,24,0.75) 55%,#020d18)}
+.travel-inner{position:relative;z-index:1;padding:1.4rem 1.5rem;display:flex;flex-direction:column}
+.travel-nav{display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem}
+.travel-logo{font-family:'Syne',sans-serif;font-size:1rem;font-weight:800;color:#38bdf8;letter-spacing:0.04em}
+.travel-nav-links{display:flex;gap:1rem;font-size:0.7rem;color:rgba(255,255,255,0.38);font-family:'DM Sans',sans-serif}
+.travel-hero{margin-bottom:1.2rem}
+.travel-tag{font-size:0.65rem;letter-spacing:0.16em;color:#38bdf8;text-transform:uppercase;margin-bottom:0.5rem;opacity:0.8}
+.travel-title{font-family:'Syne',sans-serif;font-size:2rem;font-weight:800;color:#fff;line-height:1.1;margin-bottom:0.4rem}
+.travel-title span{color:#38bdf8}
+.travel-sub{font-size:0.8rem;color:rgba(255,255,255,0.4);margin-bottom:1rem;font-family:'DM Sans',sans-serif;font-weight:300;max-width:320px}
+.travel-actions{display:flex;gap:0.6rem;flex-wrap:wrap}
+.travel-btn1{background:#38bdf8;color:#020d18;font-family:'Syne',sans-serif;font-size:0.78rem;font-weight:700;padding:0.55rem 1.3rem;border-radius:100px;white-space:nowrap}
+.travel-btn2{border:1px solid rgba(56,189,248,0.3);color:rgba(56,189,248,0.8);font-family:'DM Sans',sans-serif;font-size:0.78rem;padding:0.55rem 1.2rem;border-radius:100px;white-space:nowrap}
+.travel-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:0.7rem}
+.travel-card{background:rgba(255,255,255,0.04);border:1px solid rgba(56,189,248,0.12);border-radius:12px;overflow:hidden}
+.travel-card-img{height:80px;background-size:cover;background-position:center;position:relative}
+.travel-card-img::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,transparent 30%,rgba(2,13,24,0.7))}
+.travel-card-body{padding:0.65rem 0.75rem}
+.travel-card-dest{font-family:'Syne',sans-serif;font-size:0.85rem;font-weight:700;color:#fff;margin-bottom:0.2rem}
+.travel-card-detail{font-size:0.65rem;color:rgba(255,255,255,0.38);font-family:'DM Sans',sans-serif;margin-bottom:0.25rem}
+.travel-card-price{font-family:'Syne',sans-serif;font-size:0.8rem;font-weight:700;color:#38bdf8}
+
+/* ── ESTÉTICA ── */
+.beauty{min-height:380px;background:#0d050f;display:flex;flex-direction:column;position:relative;overflow:hidden}
+.beauty-bg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1560750588-73207b1ef5b8?w=900&q=80') center/cover no-repeat;opacity:0.15}
+.beauty-grad{position:absolute;inset:0;background:linear-gradient(160deg,rgba(13,5,15,0.55),rgba(13,5,15,0.78) 55%,#0d050f)}
+.beauty-inner{position:relative;z-index:1;padding:1.4rem 1.5rem;display:flex;flex-direction:column}
+.beauty-nav{display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem}
+.beauty-logo{font-family:'Syne',sans-serif;font-size:1rem;font-weight:800;color:#f0abfc;letter-spacing:0.05em}
+.beauty-logo span{color:rgba(240,171,252,0.5)}
+.beauty-nav-links{display:flex;gap:1rem;font-size:0.7rem;color:rgba(255,255,255,0.35);font-family:'DM Sans',sans-serif}
+.beauty-hero{margin-bottom:1.2rem}
+.beauty-tag{font-size:0.65rem;letter-spacing:0.16em;color:#f0abfc;text-transform:uppercase;margin-bottom:0.5rem;opacity:0.75}
+.beauty-title{font-family:'Syne',sans-serif;font-size:2rem;font-weight:800;color:#fff;line-height:1.1;margin-bottom:0.4rem}
+.beauty-title span{color:#f0abfc}
+.beauty-sub{font-size:0.8rem;color:rgba(255,255,255,0.38);margin-bottom:1rem;font-family:'DM Sans',sans-serif;font-weight:300;max-width:320px}
+.beauty-actions{display:flex;gap:0.6rem;flex-wrap:wrap}
+.beauty-btn1{background:linear-gradient(135deg,#e879f9,#a855f7);color:#fff;font-family:'Syne',sans-serif;font-size:0.78rem;font-weight:700;padding:0.55rem 1.3rem;border-radius:100px;white-space:nowrap}
+.beauty-btn2{border:1px solid rgba(240,171,252,0.28);color:rgba(240,171,252,0.8);font-family:'DM Sans',sans-serif;font-size:0.78rem;padding:0.55rem 1.2rem;border-radius:100px;white-space:nowrap}
+.beauty-services{display:grid;grid-template-columns:repeat(3,1fr);gap:0.7rem}
+.beauty-service{background:rgba(255,255,255,0.03);border:1px solid rgba(240,171,252,0.12);border-radius:12px;overflow:hidden}
+.beauty-service-img{height:80px;background-size:cover;background-position:center;position:relative}
+.beauty-service-img::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,transparent 30%,rgba(13,5,15,0.65))}
+.beauty-service-body{padding:0.65rem 0.75rem}
+.beauty-service-name{font-family:'DM Sans',sans-serif;font-size:0.7rem;color:rgba(255,255,255,0.7);margin-bottom:0.3rem;font-weight:400;line-height:1.3}
+.beauty-service-price{font-family:'Syne',sans-serif;font-size:0.85rem;font-weight:700;color:#f0abfc}
 .demo-caption{padding:1.2rem 1.5rem;background:rgba(0,229,160,0.04);border-top:1px solid rgba(0,229,160,0.1)}
 .demo-caption p{font-size:0.85rem;color:var(--muted);font-weight:300}
 .demo-caption strong{color:var(--accent);font-weight:500}
@@ -418,11 +472,14 @@ footer p{font-size:0.8rem;color:var(--muted)}
         <div class="demo-url"><span id="demoUrl">tevsbusiness.com/tu-negocio</span></div>
       </div>
       <div class="demo-tabs">
-        <div class="demo-tab active" data-tab="resto" data-url="laleña-restaurante.com">🍕 Restaurante</div>
-        <div class="demo-tab" data-tab="gym" data-url="elitegym-fitness.com">💪 Gimnasio</div>
-        <div class="demo-tab" data-tab="shop" data-url="mitienda-online.com">🛍️ Tienda</div>
+        <div class="demo-tab active" data-tab="resto"  data-url="laleña-restaurante.com">🍕 Restaurante</div>
+        <div class="demo-tab" data-tab="gym"   data-url="elitegym-fitness.com">💪 Gimnasio</div>
+        <div class="demo-tab" data-tab="cars"  data-url="motorpeak-autos.com">🚗 Concesionaria</div>
+        <div class="demo-tab" data-tab="travel" data-url="horizonte-viajes.com">✈️ Viajes</div>
+        <div class="demo-tab" data-tab="beauty" data-url="lumineskin-estetica.com">✨ Estética</div>
       </div>
 
+      <!-- RESTAURANTE -->
       <div class="demo-screen active" id="tab-resto">
         <div class="dr">
           <div class="dr-bg-img"></div>
@@ -437,28 +494,20 @@ footer p{font-size:0.8rem;color:var(--muted)}
               <div class="dr-title">Sabor que se<br><span>recuerda</span></div>
               <div class="dr-sub">La mejor pizza a la piedra, con delivery a tu puerta</div>
               <div class="dr-actions">
-                <div class="dr-btn1"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.995 17.16c-.362.985-1.801 1.927-2.61 2.045-.732.105-1.658.15-2.675-.168-.616-.196-1.404-.458-2.415-.898-4.252-1.848-7.023-6.196-7.233-6.487-.21-.291-1.712-2.281-1.712-4.348s1.082-3.094 1.466-3.516c.384-.422.837-.527 1.117-.527.28 0 .559.003.804.014.258.012.603-.098.944.72.351.84 1.192 2.906 1.297 3.115.105.21.175.456.035.729-.14.273-.21.443-.42.682-.21.238-.441.532-.63.714-.21.203-.428.422-.184.828.244.406 1.085 1.794 2.328 2.908 1.6 1.428 2.948 1.87 3.36 2.079.413.21.651.175.893-.105.242-.28 1.036-1.208 1.312-1.622.275-.413.55-.344.928-.207.378.137 2.4 1.132 2.812 1.338.413.207.688.31.791.482.103.172.103.996-.259 1.981z"/></svg> Pedir por WhatsApp</div>
+                <div class="dr-btn1">Pedir por WhatsApp</div>
                 <div class="dr-btn2">Ver menú completo</div>
               </div>
             </div>
             <div class="dr-menu">
-              <div class="dr-item">
-                <div class="dr-item-img" style="background-image:url('https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=300&q=80')"></div>
-                <div class="dr-item-info"><div class="dr-item-name">Napolitana</div><div class="dr-item-price">$3.500</div></div>
-              </div>
-              <div class="dr-item">
-                <div class="dr-item-img" style="background-image:url('https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=300&q=80')"></div>
-                <div class="dr-item-info"><div class="dr-item-name">Fugazzeta</div><div class="dr-item-price">$4.200</div></div>
-              </div>
-              <div class="dr-item">
-                <div class="dr-item-img" style="background-image:url('https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=300&q=80')"></div>
-                <div class="dr-item-info"><div class="dr-item-name">Pasta casera</div><div class="dr-item-price">$2.800</div></div>
-              </div>
+              <div class="dr-item"><div class="dr-item-img" style="background-image:url('https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=300&q=80')"></div><div class="dr-item-info"><div class="dr-item-name">Napolitana</div><div class="dr-item-price">$3.500</div></div></div>
+              <div class="dr-item"><div class="dr-item-img" style="background-image:url('https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=300&q=80')"></div><div class="dr-item-info"><div class="dr-item-name">Fugazzeta</div><div class="dr-item-price">$4.200</div></div></div>
+              <div class="dr-item"><div class="dr-item-img" style="background-image:url('https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=300&q=80')"></div><div class="dr-item-info"><div class="dr-item-name">Pasta casera</div><div class="dr-item-price">$2.800</div></div></div>
             </div>
           </div>
         </div>
       </div>
 
+      <!-- GIMNASIO -->
       <div class="demo-screen" id="tab-gym">
         <div class="gym">
           <div class="gym-label">High Performance Training</div>
@@ -473,39 +522,138 @@ footer p{font-size:0.8rem;color:var(--muted)}
         </div>
       </div>
 
-      <div class="demo-screen" id="tab-shop">
-        <div class="shop">
-          <div class="shop-bg"></div>
-          <div class="shop-bg-grad"></div>
-          <div class="shop-inner">
-            <div class="shop-nav">
-              <div class="shop-logo">◈ NOKTA</div>
-              <div class="shop-nav-r">
-                <span>Colecciones</span>
-                <span>Nosotros</span>
-                <span>🛒<span class="shop-cart-badge">2</span></span>
+      <!-- CONCESIONARIA -->
+      <div class="demo-screen" id="tab-cars">
+        <div class="cars">
+          <div class="cars-bg"></div>
+          <div class="cars-grad"></div>
+          <div class="cars-inner">
+            <div class="cars-nav">
+              <div class="cars-logo">MOTOR<span>PEAK</span></div>
+              <div class="cars-nav-links"><span>Vehículos</span><span>Financiación</span><span>Contacto</span></div>
+            </div>
+            <div class="cars-hero">
+              <div class="cars-tag">Concesionaria oficial · San Juan</div>
+              <div class="cars-title">Tu próximo auto,<br><span>a tu alcance</span></div>
+              <div class="cars-sub">Más de 80 vehículos disponibles · Financiación en 24 hs</div>
+              <div class="cars-actions">
+                <div class="cars-btn1">Ver catálogo completo</div>
+                <div class="cars-btn2">Consultá financiación</div>
               </div>
             </div>
-            <div class="shop-hero">
-              <div class="shop-hero-tag">Nueva colección 2026</div>
-              <div class="shop-hero-title">Moda que te define</div>
-              <div class="shop-hero-sub">Envíos a todo el país · Cuotas sin interés</div>
+            <div class="cars-grid">
+              <div class="cars-card">
+                <div class="cars-card-img" style="background-image:url('https://images.unsplash.com/photo-1555215695-3004980ad54e?w=400&q=80')"></div>
+                <div class="cars-card-body">
+                  <div class="cars-card-badge">Nuevo</div>
+                  <div class="cars-card-name">BMW Serie 3</div>
+                  <div class="cars-card-price">USD 42.900</div>
+                  <div class="cars-card-detail">320i · Automático · 2026</div>
+                </div>
+              </div>
+              <div class="cars-card">
+                <div class="cars-card-img" style="background-image:url('https://images.unsplash.com/photo-1617788138017-80ad40651399?w=400&q=80')"></div>
+                <div class="cars-card-body">
+                  <div class="cars-card-badge cars-badge-used">Usado</div>
+                  <div class="cars-card-name">Toyota Corolla</div>
+                  <div class="cars-card-price">USD 21.500</div>
+                  <div class="cars-card-detail">XEI · CVT · 2023</div>
+                </div>
+              </div>
+              <div class="cars-card">
+                <div class="cars-card-img" style="background-image:url('https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=400&q=80')"></div>
+                <div class="cars-card-body">
+                  <div class="cars-card-badge">Nuevo</div>
+                  <div class="cars-card-name">Ford Mustang</div>
+                  <div class="cars-card-price">USD 58.000</div>
+                  <div class="cars-card-detail">GT · Manual · 2026</div>
+                </div>
+              </div>
             </div>
-            <div class="shop-grid">
-              <div class="shop-card">
-                <div class="shop-card-img" style="background-image:url('https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=300&q=80')"></div>
-                <div class="shop-card-body"><div class="shop-card-name">Cartera cuero</div><div class="shop-card-price">$12.500</div></div>
-                <div class="shop-card-btn">Agregar al carrito</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- VIAJES -->
+      <div class="demo-screen" id="tab-travel">
+        <div class="travel">
+          <div class="travel-bg"></div>
+          <div class="travel-grad"></div>
+          <div class="travel-inner">
+            <div class="travel-nav">
+              <div class="travel-logo">✦ HORIZONTE</div>
+              <div class="travel-nav-links"><span>Destinos</span><span>Packs</span><span>Nosotros</span></div>
+            </div>
+            <div class="travel-hero">
+              <div class="travel-tag">Agencia de viajes · San Juan</div>
+              <div class="travel-title">Viajá sin<br><span>preocupaciones</span></div>
+              <div class="travel-sub">Packs all-inclusive, vuelos y hoteles. Todo incluido desde un solo lugar.</div>
+              <div class="travel-actions">
+                <div class="travel-btn1">Ver packs disponibles</div>
+                <div class="travel-btn2">Consultá por WhatsApp</div>
               </div>
-              <div class="shop-card">
-                <div class="shop-card-img" style="background-image:url('https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=300&q=80')"></div>
-                <div class="shop-card-body"><div class="shop-card-name">Zapatillas</div><div class="shop-card-price">$18.900</div></div>
-                <div class="shop-card-btn">Agregar al carrito</div>
+            </div>
+            <div class="travel-cards">
+              <div class="travel-card">
+                <div class="travel-card-img" style="background-image:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400&q=80')"></div>
+                <div class="travel-card-body">
+                  <div class="travel-card-dest">🌴 Cancún</div>
+                  <div class="travel-card-detail">7 noches · All inclusive</div>
+                  <div class="travel-card-price">desde $850.000</div>
+                </div>
               </div>
-              <div class="shop-card">
-                <div class="shop-card-img" style="background-image:url('https://images.unsplash.com/photo-1511499767150-a48a237f0083?w=300&q=80')"></div>
-                <div class="shop-card-body"><div class="shop-card-name">Lentes</div><div class="shop-card-price">$6.400</div></div>
-                <div class="shop-card-btn">Agregar al carrito</div>
+              <div class="travel-card">
+                <div class="travel-card-img" style="background-image:url('https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=400&q=80')"></div>
+                <div class="travel-card-body">
+                  <div class="travel-card-dest">🗼 Europa</div>
+                  <div class="travel-card-detail">14 noches · Circuito</div>
+                  <div class="travel-card-price">desde $2.100.000</div>
+                </div>
+              </div>
+              <div class="travel-card">
+                <div class="travel-card-img" style="background-image:url('https://images.unsplash.com/photo-1483683804023-6ccdb62f86ef?w=400&q=80')"></div>
+                <div class="travel-card-body">
+                  <div class="travel-card-dest">🏖️ Brasil</div>
+                  <div class="travel-card-detail">5 noches · Hotel 4★</div>
+                  <div class="travel-card-price">desde $420.000</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ESTÉTICA -->
+      <div class="demo-screen" id="tab-beauty">
+        <div class="beauty">
+          <div class="beauty-bg"></div>
+          <div class="beauty-grad"></div>
+          <div class="beauty-inner">
+            <div class="beauty-nav">
+              <div class="beauty-logo">LUMINE <span>SKIN</span></div>
+              <div class="beauty-nav-links"><span>Servicios</span><span>Turnos</span><span>Galería</span></div>
+            </div>
+            <div class="beauty-hero">
+              <div class="beauty-tag">Centro de estética · San Juan</div>
+              <div class="beauty-title">Tu piel,<br><span>transformada</span></div>
+              <div class="beauty-sub">Tratamientos faciales y corporales de última generación. Resultados visibles desde la primera sesión.</div>
+              <div class="beauty-actions">
+                <div class="beauty-btn1">Reservar turno online</div>
+                <div class="beauty-btn2">Ver tratamientos</div>
+              </div>
+            </div>
+            <div class="beauty-services">
+              <div class="beauty-service">
+                <div class="beauty-service-img" style="background-image:url('https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=300&q=80')"></div>
+                <div class="beauty-service-body"><div class="beauty-service-name">Limpieza facial profunda</div><div class="beauty-service-price">$18.000</div></div>
+              </div>
+              <div class="beauty-service">
+                <div class="beauty-service-img" style="background-image:url('https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=300&q=80')"></div>
+                <div class="beauty-service-body"><div class="beauty-service-name">Hidratación con ácido hialurónico</div><div class="beauty-service-price">$32.000</div></div>
+              </div>
+              <div class="beauty-service">
+                <div class="beauty-service-img" style="background-image:url('https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=300&q=80')"></div>
+                <div class="beauty-service-body"><div class="beauty-service-name">Masaje reductor corporal</div><div class="beauty-service-price">$25.000</div></div>
               </div>
             </div>
           </div>
